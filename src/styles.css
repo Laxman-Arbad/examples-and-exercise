@@ -1,1 +1,189 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===========================
+   GLOBAL BASE
+=========================== */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #2f3e46;
+  color: #f0f4f8;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===========================
+   ALL CARDS (Material + plain HTML)
+=========================== */
+
+/* Material cards */
+.mat-mdc-card {
+  background-color: #354f52 !important;
+  color: #f0f4f8 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  margin: 20px auto !important;
+  max-width: 400px !important;
+  padding: 16px !important;
+}
+
+.mat-mdc-card-title,
+.mat-mdc-card-subtitle,
+.mat-mdc-card-content,
+.mat-mdc-card-actions {
+  color: #f0f4f8 !important;
+}
+
+/* Plain HTML "card" divs — just add class="card" anywhere */
+.card {
+  background-color: #354f52;
+  color: #f0f4f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 16px;
+}
+
+.card header,
+.card .card-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.card ul,
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.card ul li,
+.card-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(240, 244, 248, 0.1);
+}
+
+.card ul li:last-child,
+.card-list li:last-child {
+  border-bottom: none;
+}
+
+@keyframes wind {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===========================
+   ALL MATERIAL BUTTONS
+=========================== */
+.mat-mdc-raised-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-outlined-button,
+.mat-mdc-button {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+/* Give mat-raised-button the same warm accent by default */
+.mat-mdc-raised-button:not([color]) {
+  background-color: #fec195 !important;
+  color: #181818 !important;
+}
+
+.mat-mdc-raised-button:not([color]):hover {
+  background: linear-gradient(85deg, #fec195, #fcc196, #fabd92, #fac097, #fac39c) !important;
+}
+
+/* ===========================
+   MATERIAL FORM FIELDS (inputs/labels)
+=========================== */
+.mat-mdc-form-field,
+.mat-mdc-input-element,
+.mat-mdc-form-field-label,
+.mdc-text-field__input {
+  color: #f0f4f8 !important;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+/* ===========================
+   PROFESSIONAL BUTTON STYLE
+=========================== */
+button {
+  position: relative;
+  padding: 12px 28px;
+  margin: 6px;
+  background-color: #52796f;
+  color: #f0f4f8;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #5f8a7f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.28);
+}
+
+button:active {
+  background-color: #46695f;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(82, 121, 111, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+  background-color: #4a5a5e;
+  color: rgba(240, 244, 248, 0.4);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ===========================
+   MATERIAL BUTTONS — match the same palette
+=========================== */
+.mat-mdc-raised-button:not([color]) {
+  background-color: #52796f !important;
+  color: #f0f4f8 !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.mat-mdc-raised-button:not([color]):hover {
+  background-color: #5f8a7f !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.28) !important;
+}
+
+.mat-mdc-raised-button:not([color]):active {
+  background-color: #46695f !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.mat-mdc-outlined-button {
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  border-color: #52796f !important;
+  color: #f0f4f8 !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.mat-mdc-outlined-button:hover {
+  background-color: rgba(82, 121, 111, 0.15) !important;
+}

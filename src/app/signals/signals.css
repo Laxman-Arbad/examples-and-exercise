@@ -1,0 +1,26 @@
+.full-width {
+  width: 100%;
+}
+.signal-card {
+  background-color: #354f52;
+  color: #f0f4f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 16px;
+}
+/* First direct-child div inside a card = content area */
+.card > div:first-child span {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+/* Second direct-child div inside a card = actions row */
+.card > div:last-child {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
