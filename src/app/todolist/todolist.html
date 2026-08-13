@@ -1,0 +1,27 @@
+<p>todolist works!</p>
+
+<div>
+  <div>
+    <input type="text" [value]="empname()" placeholder="Name" (input)="empname.set($event.target.value)" />
+
+    <button (click)="addEmployee()">Add Employee</button>
+  </div>
+  <div>
+    <ul>    
+      @for (item of employee(); track item.id) {
+        <li class="task-list">
+          <span>{{ item.id }} </span>
+          <span>{{ item.name }} </span>
+          <span>{{ item.position }} </span>
+          <span>{{ item.department }}</span>
+          <span>
+            <button (click)="deleteEmployee(item.id)">Delete</button>
+          </span>
+        </li>
+      }
+      @empty {
+        <span>No Employee Found!</span>
+      }
+    </ul>
+  </div>
+</div>

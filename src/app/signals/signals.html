@@ -15,22 +15,44 @@
     <button (click)="reset()"> Reset </button>    
   </div>
 </div>
-<div>
-    <header>Effect Program | if speed get high you will receive speed challan</header>
-    <span [style.color]="color">Speed: {{ speed() }}</span> <br>
-    <button (click)="speedEffect()">Effect</button>
-    <button (click)="changeFruit()">Fruit</button>
-</div>
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Effect Program</mat-card-title>
+    <mat-card-subtitle>
+      If speed gets high you will receive a speed challan
+    </mat-card-subtitle>
+  </mat-card-header>
 
-<div>
-    <header>User Data</header>
+  <mat-card-content>
+    <span [style.color]="color">Speed: {{ speed() }}</span>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="speedEffect()">Effect</button>
+    <button mat-raised-button color="accent" (click)="changeFruit()">Fruit</button>
+  </mat-card-actions>
+</mat-card>
+
+
+<mat-card class="user-card">
+  <mat-card-header>
+    <mat-card-title>User Data</mat-card-title>
+    <mat-card-subtitle>Dynamic list of users</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
     <ul>
-        @for (user of users(); track user) {
-            <li>{{ user }}</li>
-        }
+      @for (user of users(); track user) {
+        <li>{{ user }}</li>
+      }
     </ul>
-    <button (click)="updateUsers()">Update Users</button>
-</div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="updateUsers()">Update Users</button>
+  </mat-card-actions>
+</mat-card>
+
 
 <mat-card class="signal-card">
   <mat-card-header>

@@ -1,0 +1,102 @@
+<p>conditional-statements works!</p>
+
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Conditional Statements</mat-card-title>
+    <mat-card-subtitle>
+      Enter your credentials to continue
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Username</mat-label>
+      <input matInput #username placeholder="Enter username" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" #password placeholder="Enter password" />
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="login(username.value, password.value)">
+      Login
+    </button>   
+  </mat-card-actions>
+
+  <mat-card-footer>
+    @if(isLoggedIn()) {
+      <p class="success">Welcome, {{ username.value }}!</p>
+    } @else if(!isLoggedIn()) {
+        <p class="error">Invalid username or password. Please try again.</p>      
+    } 
+  </mat-card-footer>
+</mat-card>
+
+<mat-card class="status-card">
+  <mat-card-header>
+    <mat-card-title>Status Tracker</mat-card-title>
+    <mat-card-subtitle>Select and view current status</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    
+      <mat-label>Status</mat-label>
+      <select (change)="ChangeEvent($event)">
+        <option value="notStarted">Not Started</option>
+        <option value="started">Started</option>
+        <option value="progress">In Progress</option>
+        <option value="success">Success</option>
+        <option value="error">Error</option>
+      </select>
+    
+
+    <!-- Conditional rendering -->
+    @if(status() === 'notStarted') {
+      <p style="color: gray;" class="status not-started">Not Started</p>
+    } @else if(status() === 'started') {
+      <p  style="color: green;" class="status started">Started</p>
+    } @else if(status() === 'progress') {
+      <p style="color: blue;" class="status progress">In Progress</p>
+    } @else if(status() === 'success') {
+      <p style="color: green;" class="status success">Success</p>
+    } @else if(status() === 'error') {
+      <p style="color: red;" class="status error">Error</p>
+    }
+  </mat-card-content>
+  @switch (status()) {
+    @case ('notStarted') {
+      <p class="status not-started">Not Started</p>
+    }
+    @case ('started') {
+      <p class="status started">Started</p>
+    }
+    @case ('progress') {
+      <p class="status progress">In Progress</p>
+    }
+    @case ('success') {
+      <p class="status success">Success</p>
+    }
+    @case ('error') {
+      <p class="status error">Error</p>
+    }
+  }
+</mat-card>
+
+
+<mat-card>
+    <mat-card-header>
+    <mat-card-title>Two Way Data Binding</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-label>Age : {{ age }}</mat-label>
+        <input type="text" min="0" max="100" [(ngModel)]="age">        
+        <button mat-raised-button color="primary" (click)="ageCount()">
+      Increase Age
+    </button>  
+    </mat-card-content>
+</mat-card>
+
+
