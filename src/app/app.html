@@ -1,13 +1,21 @@
-<mat-tab-group>
-  <mat-tab label="Signals">
-    <app-signals></app-signals>
-  </mat-tab>
+<nav class="navbar">  
+  <div class="logo">
+    <!-- <img src="assets/code_time.png" alt="Example & Exercise" /> -->
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
+     <p> {{ "Examples & Exercise" | uppercase }} </p>
+  </div>
 
-  <mat-tab label="Counter">
-    <app-counter></app-counter>
-  </mat-tab>
+  <!-- Right side: navigation links -->
+  <ul class="nav-menu">
+    <li><a routerLink="" routerLinkActive="active">Signals</a></li>
+    <li><a routerLink="/conditional" routerLinkActive="active">Statements</a></li>
+    <li><a routerLink="/todolist" routerLinkActive="active">Todo List</a></li>
+    <li><a routerLink="/counter" routerLinkActive="active">Counter</a></li>
+    <li><a routerLink="/parent" routerLinkActive="active">Parent</a></li>
+    <li><a routerLink="/child" routerLinkActive="active">Child</a></li>
+    <li><a routerLink="/pipes" routerLinkActive="active">Pipes</a></li>
+     <li><a routerLink="/users" routerLinkActive="active">Users</a></li>
+  </ul>
+</nav>
 
-  <mat-tab label="Profile">
-    <!-- <app-profile></app-profile> -->
-  </mat-tab>
-</mat-tab-group>
+<router-outlet></router-outlet>

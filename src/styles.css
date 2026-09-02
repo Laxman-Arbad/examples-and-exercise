@@ -19,9 +19,10 @@ html, body {
   color: #f0f4f8 !important;
   border-radius: 8px !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-  margin: 20px auto !important;
+  /* margin: 20px auto !important; */
   max-width: 400px !important;
   padding: 16px !important;
+  flex: 1 1 300px;
 }
 
 .mat-mdc-card-title,
@@ -37,9 +38,10 @@ html, body {
   color: #f0f4f8;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  margin: 20px auto;
   max-width: 400px;
   padding: 16px;
+  flex: 1 1 300px;
+  /* margin: 20px auto;  <- remove this line */
 }
 
 .card header,
@@ -187,3 +189,71 @@ button:disabled {
 .mat-mdc-outlined-button:hover {
   background-color: rgba(82, 121, 111, 0.15) !important;
 }
+/* Global select styling */
+select {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none; /* removes default arrow */
+  background-image: linear-gradient(45deg, transparent 50%, #3f51b5 50%),
+                    linear-gradient(135deg, #3f51b5 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+                       calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+select:hover {
+  border-color: #3f51b5;
+  background-color: #f1f1f1;
+}
+
+select:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 3px rgba(63,81,181,0.2);
+}
+
+option {
+  padding: 10px;
+}
+/* ===========================
+   CARD GRID LAYOUT
+=========================== */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;              /* allows wrapping to next row */
+  gap: 20px;                    /* spacing between cards */
+  justify-content: center;      /* center cards horizontally */
+  margin: 20px auto;
+  max-width: 1200px;            /* keeps layout neat on wide screens */
+}
+
+.card-grid .mat-mdc-card,
+.card-grid .card {
+  flex: 1 1 calc(33.333% - 20px); /* 3 columns */
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .card-grid .mat-mdc-card,
+  .card-grid .card {
+    flex: 1 1 calc(50% - 20px); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid .mat-mdc-card,
+  .card-grid .card {
+    flex: 1 1 100%;             /* single column on mobile */
+  }
+}
+

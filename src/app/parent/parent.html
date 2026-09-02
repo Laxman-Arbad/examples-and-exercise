@@ -1,0 +1,13 @@
+<h3>Counter =  {{counter.counterValue()}}</h3> <br>
+<button (click)="counter.increment()">Increment</button>
+<button (click)="counter.decrement()">Decrement</button>
+<h3>Hello, {{selectedUser()}}</h3> <br>
+<input type="text" [value]="newUser()" (input)="newUser.set($event.target.value)" placeholder="Enter your greeting">
+<button (click)="addUser()">Add User</button>
+
+@for (item of users(); track item) {
+    <app-children [userName]=item
+    (selectedUser)="getSelectedUser($event)"
+    (deletedUser)="deleteUser($event)"> </app-children>
+}
+
