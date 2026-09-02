@@ -1,43 +1,49 @@
-::ng-deep .mat-tab-group {
-  background: #1e1e2f; /* Dark background */
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  padding: 10px;
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  padding: 0 20px;
+  background: #2c3e50; /* dark professional tone */
+  height: 60px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-::ng-deep .mat-tab-header {
-  background: #2c2c3e;
-  border-radius: 6px 6px 0 0;
+/* Logo styling */
+.logo img {
+  height: 40px;
+  width: auto;
 }
 
-::ng-deep .mat-tab-label {
-  color: #b0bec5;
+/* Navigation menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-left: 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #ecf0f1;
   font-weight: 500;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-::ng-deep .mat-tab-label:hover {
-  color: #ffffff;
-  background: rgba(255,255,255,0.1);
+  padding: 8px 12px;
   border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
 }
 
-::ng-deep .mat-tab-label-active {
-  color: #64b5f6; /* Accent color */
-  font-weight: bold;
-  border-bottom: 3px solid #64b5f6;
+/* Hover effect */
+.nav-menu a:hover {
+  background: #34495e;
+  color: #1abc9c;
 }
 
-::ng-deep .mat-ink-bar {
-  background-color: #64b5f6 !important; /* Active underline */
-  height: 3px;
-  border-radius: 2px;
-}
-
-::ng-deep .mat-tab-body {
-  background: #2c2c3e;
-  border-radius: 0 0 6px 6px;
-  padding: 20px;
-  color: #e0e6ed;
+/* Active route highlight */
+.nav-menu a.active {
+  background: #1abc9c;
+  color: #fff;
 }

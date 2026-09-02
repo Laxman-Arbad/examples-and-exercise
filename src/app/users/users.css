@@ -1,0 +1,25 @@
+ul {
+  list-style: none;          /* remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin: 8px 0;             /* spacing between items */
+}
+
+ul li a {
+  display: flex;            /* make the whole line clickable */
+  padding: 10px 15px;
+  text-decoration: none;     /* remove underline */
+  color: #eef1f1;               /* text color */
+  border: 1px solid #ddd;    /* subtle border */
+  border-radius: 5px;        /* rounded corners */
+  transition: all 0.3s ease; /* smooth hover effect */
+}
+
+ul li a:hover {
+  background-color: #f0f0f0; /* light background on hover */
+  color: #007bff;            /* highlight text color */
+  border-color: #007bff;     /* highlight border */
+}

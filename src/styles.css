@@ -224,3 +224,36 @@ select:focus {
 option {
   padding: 10px;
 }
+/* ===========================
+   CARD GRID LAYOUT
+=========================== */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;              /* allows wrapping to next row */
+  gap: 20px;                    /* spacing between cards */
+  justify-content: center;      /* center cards horizontally */
+  margin: 20px auto;
+  max-width: 1200px;            /* keeps layout neat on wide screens */
+}
+
+.card-grid .mat-mdc-card,
+.card-grid .card {
+  flex: 1 1 calc(33.333% - 20px); /* 3 columns */
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .card-grid .mat-mdc-card,
+  .card-grid .card {
+    flex: 1 1 calc(50% - 20px); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid .mat-mdc-card,
+  .card-grid .card {
+    flex: 1 1 100%;             /* single column on mobile */
+  }
+}
+

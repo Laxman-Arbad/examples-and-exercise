@@ -1,1 +1,9 @@
-<p>children works!</p>
+
+<li class="list">
+    {{ userName }}
+    <button (click)="whichUser(userName)">Select</button>
+    <button (click)="deleteUser(userName)">Delete</button>
+</li>
+
+<button (click)="counte.reset()">Reset</button>
+

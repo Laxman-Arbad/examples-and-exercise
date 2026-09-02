@@ -1,0 +1,35 @@
+<p>pipes works!</p>
+<div>
+    <span>This will send you to Conditional because route.navigate(['conditional'])</span>
+    <button (click)="gotoSignals()">Go To Signals</button>
+</div>
+<div>
+     {{ sentence() | titlecase }}
+</div>
+<br>
+<div>
+    <input type="text" 
+    (keyup.enter)="sentence.set($event.target.value)" 
+    placeholder="Enter your sentence">
+</div>
+<div>
+    <h4>{{ empData() | json}} </h4>
+</div>
+
+<h2>I'm from Custom Trim Text pipe</h2>
+
+<button (click)="count.increment()">Increment</button>
+<button (click)="count.decrement()">Decrement</button>
+<div>
+    {{ strtrimtext() | trimtext:count.counterValue() }}
+</div>
+<hr>
+<h2>Pure and Impure Pipes</h2>
+<hr>
+<div>
+    <h2><span>Query parameter from statement</span></h2>
+    <p>{{ paramData().name }}</p>
+    <p>{{ paramData().gender }}</p>
+    <p>{{ paramData().address }}</p>
+</div>
+
